@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.1](https://github.com/ayagmar/pi-extmgr/compare/v0.2.0...v0.2.1) (2026-04-29)
+
+### Bug Fixes
+
+* **extmgr:** support pi 0.70 session startup ([60c4943](https://github.com/ayagmar/pi-extmgr/commit/60c4943de33b524daf88da5889ebfbd21f6464c5))
+
 ## [0.2.0](https://github.com/ayagmar/pi-extmgr/compare/v0.1.28...v0.2.0) (2026-04-20)
 
 ### Features
