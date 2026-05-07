@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/ayagmar/pi-extmgr/compare/v0.2.1...v0.2.2) (2026-05-07)
+
+### Bug Fixes
+
+* **extmgr:** harden npm reload handling ([555a049](https://github.com/ayagmar/pi-extmgr/commit/555a0492fa9f641dbc717dbe552efe8e4981f792))
+* **extmgr:** refine npm command handling ([497a174](https://github.com/ayagmar/pi-extmgr/commit/497a174728528c4032188ecb45406002c104f90e))
+
 ## [0.2.1](https://github.com/ayagmar/pi-extmgr/compare/v0.2.0...v0.2.1) (2026-04-29)
 
 ### Bug Fixes
