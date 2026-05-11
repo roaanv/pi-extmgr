@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.3.0](https://github.com/ayagmar/pi-extmgr/compare/v0.2.2...v0.3.0) (2026-05-11)
+
 ## [0.2.2](https://github.com/ayagmar/pi-extmgr/compare/v0.2.1...v0.2.2) (2026-05-07)
 
 ### Bug Fixes
