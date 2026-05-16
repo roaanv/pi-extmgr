@@ -13,6 +13,7 @@ import { notify } from "../utils/notify.js";
 import { handleAutoUpdateSubcommand } from "./auto-update.js";
 import { clearMetadataCacheCommand } from "./cache.js";
 import { handleHistorySubcommand } from "./history.js";
+import { handleExportSubcommand, handleImportSubcommand } from "./import-export.js";
 import { handleInstallSubcommand, INSTALL_USAGE } from "./install.js";
 import { type CommandDefinition, type CommandId } from "./types.js";
 
@@ -33,6 +34,8 @@ function showNonInteractiveHelp(ctx: ExtensionCommandContext): void {
     `  ${INSTALL_USAGE} - Install a package`,
     "  /extensions remove <source>  - Remove a package",
     "  /extensions update [source]  - Update one package or all packages",
+    "  /extensions export [file]    - Export selected install recipes",
+    "  /extensions import [file]    - Import selected install recipes",
     "  /extensions history [opts]   - Show history (supports filters)",
     "  /extensions auto-update <d>  - Configure auto-update (e.g. 1d, 1w, 1mo, never)",
     "",
@@ -111,6 +114,18 @@ const COMMAND_DEFINITIONS: Record<CommandId, CommandDefinition> = {
       tokens.length > 0 ? updatePackage(tokens.join(" "), ctx, pi) : updatePackages(ctx, pi),
     runNonInteractive: (tokens, ctx, pi) =>
       tokens.length > 0 ? updatePackage(tokens.join(" "), ctx, pi) : updatePackages(ctx, pi),
+  },
+  export: {
+    id: "export",
+    description: "Export selected install recipes",
+    runInteractive: (tokens, ctx, pi) => handleExportSubcommand(tokens, ctx, pi),
+    runNonInteractive: (_tokens, ctx) => requireInteractiveCommand(ctx, "Extension export"),
+  },
+  import: {
+    id: "import",
+    description: "Import selected install recipes",
+    runInteractive: (tokens, ctx, pi) => handleImportSubcommand(tokens, ctx, pi),
+    runNonInteractive: (_tokens, ctx) => requireInteractiveCommand(ctx, "Extension import"),
   },
   history: {
     id: "history",

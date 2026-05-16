@@ -9,6 +9,8 @@ export type CommandId =
   | "install"
   | "remove"
   | "update"
+  | "export"
+  | "import"
   | "history"
   | "clear-cache"
   | "auto-update";
